@@ -1,6 +1,12 @@
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+group :development do
+end
 
-# Specify your gem's dependencies in vagrant-commands.gemspec
-gemspec
+group :test do
+  gem 'vagrant', :git => 'https://github.com/hashicorp/vagrant.git', :tag => 'v2.2.4'
+end
+
+group :plugins do
+  gemspec
+end
