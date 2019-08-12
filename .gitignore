@@ -1,3 +1,6 @@
+# Ignore vagrant files
+/.vagrant
+
 *.gem
 *.rbc
 /.config
