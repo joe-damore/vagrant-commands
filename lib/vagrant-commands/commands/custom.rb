@@ -31,7 +31,19 @@ module Commands
             if commandItem.has_key?('exec')
               if commandItem['exec'] != nil and commandItem['exec'].has_key?('command')
                 options = {}
-                options[:extra_args] = ["-t", "#{commandItem['exec']['command']}"]
+                arguments = ""
+                
+
+                if ARGV.length > 1
+                  rangeEnd = ARGV.length - 1
+                  argvArguments = ARGV[1..rangeEnd]
+                  arguments = " "
+                  argvArguments.each { |arg|
+                    arguments = "#{arguments} #{arg}"
+                  }
+                end
+
+                options[:extra_args] = ["-t", "#{commandItem['exec']['command']}#{arguments}"]
 
                 Vagrant::Util::SSH.exec(machine.ssh_info, options);
               end
