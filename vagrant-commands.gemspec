@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Custom commands for local development"
   spec.description   = "Custom commands for Vagrant local development environments"
-  spec.homepage      = "https://github.com/joe-damore/vagrant-commands/tree/develop"
+  spec.homepage      = "https://github.com/joe-damore/vagrant-commands"
   spec.license       = "MIT"
 
   spec.bindir        = "exe"
